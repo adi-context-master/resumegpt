@@ -32,7 +32,6 @@ const SUGGESTIONS = [
   { label: 'Skills', description: 'Technical and domain skills' },
   { label: 'Education', description: 'Academic background' },
   { label: 'Achievements', description: 'Key accomplishments and impact' },
-  { label: 'RegTech Expertise', description: 'Regulatory technology experience' },
   { label: 'Banking', description: 'Digital banking and fintech' },
   { label: 'Product Management', description: 'Product ownership experience' },
 ];
