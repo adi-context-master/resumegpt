@@ -4,6 +4,11 @@ import { useState, KeyboardEvent, useEffect } from 'react';
 import { QUICK_PROMPTS } from '@/lib/quickPrompts';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 type ChatInputProps = {
   onSend: (message: string) => void;
@@ -154,19 +159,22 @@ export default function ChatInput({ onSend, disabled = false, showQuickPrompts =
           )}
           {/* Job Analysis Button */}
           {onJobAnalysis && (
-            <button
-              onClick={onJobAnalysis}
-              className="group absolute right-14 bottom-3 p-2 rounded-lg hover:bg-chat-accent/10 transition-colors"
-              aria-label="Check Job Fit"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-chat-accent">
-                <path fillRule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clipRule="evenodd" />
-              </svg>
-              {/* Tooltip */}
-              <span className="absolute bottom-full right-0 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
-                Upload Job Description - Check if Aditya is an ideal fit
-              </span>
-            </button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={onJobAnalysis}
+                  className="absolute right-14 bottom-3 p-2 rounded-lg hover:bg-chat-accent/10 transition-colors"
+                  aria-label="Check Job Fit"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-chat-accent">
+                    <path fillRule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clipRule="evenodd" />
+                  </svg>
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="left" className="max-w-xs">
+                <p>Upload Job Description - Check if Aditya is an ideal fit</p>
+              </TooltipContent>
+            </Tooltip>
           )}
 
           <Button
