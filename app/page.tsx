@@ -209,7 +209,7 @@ ${edu.years}
 
             {/* LinkedIn Icon */}
             <a
-              href="https://www.linkedin.com/in/aditya-pratap-singh"
+              href="https://www.linkedin.com/in/aditya270195/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg hover:bg-user-bubble transition-colors"
